@@ -1,4 +1,4 @@
-﻿namespace ProductAPI.DTOs
+﻿namespace ProductAPI.Notifications
 {
     public class ProductAddedNotification
     {

@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using ProductAPI.Data;
 using ProductAPI.DTOs;
 using ProductAPI.MessageBus;
+using ProductAPI.Notifications;
 using System.Text.Json;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860

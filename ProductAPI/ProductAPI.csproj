@@ -8,6 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="product.db-shm" />
+    <None Remove="product.db-wal" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.7" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.7">
       <PrivateAssets>all</PrivateAssets>

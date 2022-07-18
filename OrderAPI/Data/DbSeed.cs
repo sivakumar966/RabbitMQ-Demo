@@ -19,6 +19,19 @@
 
                     await dbContext.SaveChangesAsync();
                 }
+
+                if (!dbContext.Products.Any())
+                {
+                    await dbContext.Products.AddRangeAsync(
+                            new List<Product>() {
+                                new Product() {ProductName = "Parle-G" , Price = 5 , ProductId = 1 },
+                                new Product() {ProductName = "OREO" , Price = 10, ProductId = 2},
+                                new Product() {ProductName = "Good Day" , Price = 10, ProductId = 3 }
+                            }
+                        );
+
+                    await dbContext.SaveChangesAsync();
+                }
             }
         }
     }
