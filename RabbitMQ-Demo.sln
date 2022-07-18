@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductAPI", "ProductAPI\Pr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderAPI", "OrderAPI\OrderAPI.csproj", "{BD91ACE3-E428-4678-A128-5AAFD8D180BB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportAPI", "ReportAPI\ReportAPI.csproj", "{030334B7-1B04-4953-A625-9BDE659C2F7F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{BD91ACE3-E428-4678-A128-5AAFD8D180BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD91ACE3-E428-4678-A128-5AAFD8D180BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD91ACE3-E428-4678-A128-5AAFD8D180BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{030334B7-1B04-4953-A625-9BDE659C2F7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{030334B7-1B04-4953-A625-9BDE659C2F7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{030334B7-1B04-4953-A625-9BDE659C2F7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{030334B7-1B04-4953-A625-9BDE659C2F7F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
