@@ -36,6 +36,7 @@ DbSeed.RunDBSeed(app);
 
 app.UseAuthorization();
 
+app.MapGet("/", () => { return "Order Service"; });
 app.MapControllers();
 
 app.Run();
