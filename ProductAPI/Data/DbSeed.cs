@@ -11,9 +11,9 @@
                 {
                     await dbContext.Products.AddRangeAsync(
                             new List<Product>() {
-                                new Product (){ProductName = "Parle-G" , Price = 5 },
-                                new Product(){ProductName = "OREO" , Price = 10},
-                                new Product() {ProductName ="Good Day" , Price = 10}
+                                new Product() {ProductName = "Parle-G" , Price = 5 , CreatedOn = DateTime.Now.AddMinutes(10)},
+                                new Product() {ProductName = "OREO" , Price = 10, CreatedOn = DateTime.Now.AddMinutes(7)},
+                                new Product() {ProductName = "Good Day" , Price = 10, CreatedOn = DateTime.Now.AddMinutes(3)}
                             }
                         );
 
