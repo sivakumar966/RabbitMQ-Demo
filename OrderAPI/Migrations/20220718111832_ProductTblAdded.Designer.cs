@@ -11,8 +11,8 @@ using OrderAPI.Data;
 namespace OrderAPI.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220718092803_OrderTableAdded")]
-    partial class OrderTableAdded
+    [Migration("20220718111832_ProductTblAdded")]
+    partial class ProductTblAdded
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -40,6 +40,26 @@ namespace OrderAPI.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Orders");
+                });
+
+            modelBuilder.Entity("OrderAPI.Data.Product", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Price")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("ProductName")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Products");
                 });
 #pragma warning restore 612, 618
         }

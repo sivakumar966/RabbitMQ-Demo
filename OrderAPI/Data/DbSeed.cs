@@ -6,7 +6,7 @@
         {
             using (var scope = app.Services.CreateScope())
             {
-                var dbContext = scope.ServiceProvider.GetRequiredService<AppDBContext>();
+                var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
                 if (!dbContext.Orders.Any())
                 {
                     await dbContext.Orders.AddRangeAsync(

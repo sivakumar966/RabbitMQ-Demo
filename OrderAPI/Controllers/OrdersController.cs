@@ -8,9 +8,9 @@ namespace OrderAPI.Controllers
     [ApiController]
     public class OrdersController : ControllerBase
     {
-        private readonly AppDBContext _context;
+        private readonly AppDbContext _context;
 
-        public OrdersController(AppDBContext context)
+        public OrdersController(AppDbContext context)
         {
             _context = context;
         }

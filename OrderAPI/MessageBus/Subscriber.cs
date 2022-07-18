@@ -7,13 +7,15 @@ namespace OrderAPI.MessageBus
 
     public class Subscriber : BackgroundService
     {
+        private readonly IServiceProvider serviceProvider;
         private readonly IConfiguration configuration;
         private readonly ILogger<Subscriber> logger;
         private IConnection connection;
         private IModel channel;
 
-        public Subscriber(IConfiguration configuration, ILogger<Subscriber> logger)
+        public Subscriber(IServiceProvider serviceProvider, IConfiguration configuration, ILogger<Subscriber> logger)
         {
+            this.serviceProvider = serviceProvider;
             this.configuration = configuration;
             this.logger = logger;
             InitilizeConnection();
@@ -27,10 +29,12 @@ namespace OrderAPI.MessageBus
             return Task.CompletedTask;
         }
 
-        private void Consumer_Received(object sender, BasicDeliverEventArgs e)
+        private async void Consumer_Received(object sender, BasicDeliverEventArgs e)
         {
             var notificationMessage = Encoding.UTF8.GetString(e.Body.ToArray());
             logger.LogInformation(notificationMessage);
+            IEventMessageProcessor eventProcessor = serviceProvider.GetRequiredService<IEventMessageProcessor>();
+            await eventProcessor.ProcessNotification(notificationMessage);
         }
 
         private void InitilizeConnection()
