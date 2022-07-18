@@ -33,7 +33,9 @@ namespace OrderAPI.MessageBus
         {
             var notificationMessage = Encoding.UTF8.GetString(e.Body.ToArray());
             logger.LogInformation(notificationMessage);
-            IEventMessageProcessor eventProcessor = serviceProvider.GetRequiredService<IEventMessageProcessor>();
+
+            using var scope = serviceProvider.CreateScope();
+            IEventMessageProcessor eventProcessor = scope.ServiceProvider.GetRequiredService<IEventMessageProcessor>();
             await eventProcessor.ProcessNotification(notificationMessage);
         }
 
